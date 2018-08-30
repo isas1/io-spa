@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 //material-ui imports
 import { withStyles, MuiThemeProvider } from '@material-ui/core/styles';
-
 import Add from '@material-ui/icons/AddCircleOutline';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
@@ -19,12 +18,13 @@ import theme from '../../Components/ThemeChanger/Themes';
 
 import { FaArrowAltCircleRight } from 'react-icons/fa';
 
-const styles = theme => ({
+// CSS in JS
+const styles = (theme) => ({
   root: {
     flexGrow: 1
   },
   avatar: {
-    backgroundColor: getThemeColour(),
+    backgroundColor: theme.palette.primary[50],
     color: '#666'
   },
   paperRightTitle: {
@@ -41,10 +41,6 @@ const styles = theme => ({
     padding: theme.spacing.unit * 2
   }
 });
-
-function getThemeColour() {
-  return '' + theme.palette.primary[50];
-}
 
 
 class Inputs extends Component {
